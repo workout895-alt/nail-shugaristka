@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nail_shugaristka — Студия ногтевого сервиса и шугаринга в Астане</title>
+  <meta name="description" content="Nail_shugaristka в Астане (ул. Жумекен Нажимеденов, 62, Сарайшык район). Аппаратный маникюр, гель-лак, наращивание гелем и акрилом, женский педикюр, шугаринг и выезд на дом. Ежедневно 10:00–20:00.">
+  <meta property="og:title" content="Nail_shugaristka — Ногтевой сервис и шугаринг в Астане">
+  <meta property="og:description" content="Нежная эстетика и аккуратная работа: маникюр, гель-лак, наращивание, педикюр, шугаринг и выезд на дом. Сарайшык район, рядом с Нурлы жол.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdf7f8;
+      --bg-soft: #f7e6ea;
+      --surface: #ffffff;
+      --surface-tint: #fbf1f3;
+      --text: #3a292e;
+      --text-muted: #765c64;
+      --accent: #c27687;
+      --accent-dark: #a65c6d;
+      --accent-light: #f3dce1;
+      --border: rgba(194, 118, 135, 0.24);
+      --border-strong: rgba(58, 41, 46, 0.16);
+      --shadow-sm: 0 10px 28px rgba(96, 56, 68, 0.06);
+      --shadow-md: 0 20px 50px rgba(96, 56, 68, 0.10);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--text);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(circle at 8% 12%, rgba(238, 200, 209, 0.48) 0%, transparent 42%),
+        radial-gradient(circle at 92% 18%, rgba(244, 214, 221, 0.55) 0%, transparent 38%),
+        radial-gradient(circle at 75% 78%, rgba(238, 200, 209, 0.36) 0%, transparent 45%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(253, 247, 248, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 74px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--border-strong);
+      box-shadow: 0 4px 12px rgba(96, 56, 68, 0.08);
+      flex-shrink: 0;
+    }
+    .brand-text { min-width: 0; }
+    .brand-title {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .nav a:hover { color: var(--accent-dark); }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .header-hours {
+      text-align: right;
+      font-size: 0.78rem;
+      line-height: 1.3;
+      color: var(--text-muted);
+    }
+    .header-hours strong {
+      display: block;
+      color: #3f7d58;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+      background: var(--text);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(58, 41, 46, 0.18);
+    }
+    .btn-primary:hover {
+      background: #4e373e;
+      transform: translateY(-1px);
+    }
+    .btn-rose {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(194, 118, 135, 0.28);
+    }
+    .btn-rose:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--text);
+      border-color: var(--border-strong);
+    }
+    .btn-outline:hover {
+      background: #fff;
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 52px 0 64px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      box-shadow: 0 4px 14px rgba(96, 56, 68, 0.04);
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 4.6vw, 3.85rem);
+      line-height: 1.06;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 26px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .fact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+    .fact-chip strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-card {
+      position: relative;
+      background: var(--surface);
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      max-width: 460px;
+      width: 100%;
+      margin-left: auto;
+    }
+    .hero-card-media {
+      position: relative;
+      aspect-ratio: 4 / 4.4;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg-soft);
+    }
+    .hero-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-glass {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(194, 118, 135, 0.25);
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 10px 24px rgba(58, 41, 46, 0.10);
+    }
+    .hero-glass-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .hero-glass-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-strong);
+      flex-shrink: 0;
+    }
+    .hero-glass-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--text);
+    }
+    .hero-glass-sub {
+      font-size: 0.78rem;
+      color: var(--accent-dark);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Section shared */
+    .section {
+      padding: 64px 0;
+    }
+    .section-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 38px;
+    }
+    .section-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.6vw, 2.85rem);
+      font-weight: 600;
+      line-height: 1.12;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* Portfolio (3 photos from 2GIS) */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .work-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .work-media {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: var(--bg-soft);
+    }
+    .work-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .work-card:hover .work-media img {
+      transform: scale(1.04);
+    }
+    .work-body {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .work-name {
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+    .work-tag {
+      font-size: 0.78rem;
+      color: var(--accent-dark);
+      background: var(--surface-tint);
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Price list */
+    .price-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .price-tab {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .price-tab.active, .price-tab:hover {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+
+    .price-panel {
+      display: none;
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 12px 26px;
+      box-shadow: var(--shadow-sm);
+    }
+    .price-panel.active { display: block; }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .price-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .price-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .price-val {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+    .price-book {
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface-tint);
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s ease;
+    }
+    .price-book:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .price-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Advantages / Features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--surface-tint);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+    }
+    .feature-card h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Contacts & Location */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .contact-list {
+      display: grid;
+      gap: 16px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .contact-dot {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--surface-tint);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.05rem;
+    }
+    .contact-item span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .contact-item strong {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .brand-showcase {
+      background: linear-gradient(145deg, #f9e8ec 0%, #f2d5dc 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand-showcase-logo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(58, 41, 46, 0.25);
+      box-shadow: 0 14px 34px rgba(96, 56, 68, 0.14);
+    }
+    .brand-showcase h3 {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .brand-showcase p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 340px;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 92px;
+      background: rgba(255, 255, 255, 0.55);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .footer-brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-strong);
+    }
+
+    /* Mobile Sticky CTA */
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 45;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+    }
+
+    /* Modal & Lightbox */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background: rgba(38, 24, 28, 0.55);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 28px;
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      box-shadow: var(--shadow-md);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface-tint);
+      color: var(--text);
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .modal-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      margin-bottom: 6px;
+    }
+    .modal-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+    .form-field {
+      margin-bottom: 14px;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-field input, .form-field select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-sans);
+      font-size: 0.94rem;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .lightbox-img {
+      max-width: 92vw;
+      max-height: 86vh;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (max-width: 960px) {
+      .nav, .header-hours { display: none; }
+      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-card { margin: 0 auto; }
+      .works-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .brand-title { font-size: 1.18rem; }
+      .brand-sub { font-size: 0.7rem; }
+      .header .btn-primary { padding: 9px 14px; font-size: 0.82rem; }
+      .hero { padding: 30px 0 46px; }
+      .section { padding: 46px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .price-panel { padding: 8px 16px; }
+      .price-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .price-right { width: 100%; justify-content: space-between; }
+      .mobile-cta { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="assets/logo.png" alt="Логотип Nail_shugaristka" class="brand-logo">
+        <div class="brand-text">
+          <div class="brand-title">Nail_shugaristka</div>
+          <div class="brand-sub">Ногтевой сервис и шугаринг • Астана</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#works">Работы</a>
+        <a href="#prices">Прайс-лист</a>
+        <a href="#features">Преимущества</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-right">
+        <div class="header-hours">
+          <strong>Работаем ежедневно</strong>
+          10:00 – 20:00
+        </div>
+        <button type="button" class="btn btn-primary" onclick="openBooking('Консультация / запись')">Записаться</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill-badge">
+            <span>📍</span>
+            <span>Астана • Сарайшык район, ул. Жумекен Нажимеденов, 62</span>
+          </div>
+          <h1 class="hero-title">
+            Нежная эстетика и <em>аккуратный уход</em> каждый день
+          </h1>
+          <p class="hero-desc">
+            Студия мастера Анары Оспановой: бережный аппаратный маникюр, стойкий гель-лак, наращивание гелем и акрилом, женский педикюр и деликатный шугаринг. Принимаем в уютной студии или с выездом на дом.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/77074504145?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%D1%83." target="_blank" rel="noopener" class="btn btn-rose">Записаться в WhatsApp</a>
+            <a href="https://www.instagram.com/Nail_shugaristka" target="_blank" rel="noopener" class="btn btn-outline">Instagram @nail_shugaristka ↗</a>
+          </div>
+          <div class="hero-facts">
+            <div class="fact-chip"><span>💅</span><span>Маникюр + гель-лак</span><strong>7 500 ₸</strong></div>
+            <div class="fact-chip"><span>🍯</span><span>Шугаринг</span><strong>от 2 000 ₸</strong></div>
+            <div class="fact-chip"><span>🕒</span><span>Ежедневно</span><strong>10:00 – 20:00</strong></div>
+            <div class="fact-chip"><span>🚆</span><span>Рядом ж/д вокзал Нурлы жол</span><strong>7 мин</strong></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-media">
+            <img src="assets/hero_work.jpg" alt="Маникюр в студии Nail_shugaristka" class="hero-card-img">
+            <div class="hero-glass">
+              <div class="hero-glass-left">
+                <img src="assets/logo.png" alt="Логотип Nail_shugaristka" class="hero-glass-logo">
+                <div style="min-width:0;">
+                  <div class="hero-glass-title">NAIL_SHUGARISTKA</div>
+                  <div class="hero-glass-sub">Анара Оспанова • Маникюр &amp; Шугаринг</div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-rose" style="padding:9px 15px;font-size:0.82rem;" onclick="openBooking('Маникюр + гель-лак')">Запись</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Примеры из 2ГИС</span>
+          <h2 class="section-title">Наши работы</h2>
+          <p class="section-sub">Реальные фотографии работ из карточки студии в 2ГИС. Нажмите на фото, чтобы рассмотреть покрытие в деталях.</p>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card" onclick="openLightbox('assets/work_1.jpg')">
+            <div class="work-media">
+              <img src="assets/work_1.jpg" alt="Нежный пудровый нюд — маникюр Nail_shugaristka">
+            </div>
+            <div class="work-body">
+              <div class="work-name">Пудровый нюд и выравнивание</div>
+              <span class="work-tag">Гель-лак</span>
+            </div>
+          </article>
+
+          <article class="work-card" onclick="openLightbox('assets/work_2.jpg')">
+            <div class="work-media">
+              <img src="assets/work_2.jpg" alt="Глубокий винный глянец — маникюр Nail_shugaristka">
+            </div>
+            <div class="work-body">
+              <div class="work-name">Глубокий винный глянец</div>
+              <span class="work-tag">Аппаратный</span>
+            </div>
+          </article>
+
+          <article class="work-card" onclick="openLightbox('assets/work_3.jpg')">
+            <div class="work-media">
+              <img src="assets/work_3.jpg" alt="Ягодно-розовое покрытие — маникюр Nail_shugaristka">
+            </div>
+            <div class="work-body">
+              <div class="work-name">Нежно-розовый акцент</div>
+              <span class="work-tag">Покрытие</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Прайс-лист</span>
+          <h2 class="section-title">Услуги и ориентировочные цены</h2>
+          <p class="section-sub">Выберите направление — маникюр, наращивание, педикюр или шугаринг.</p>
+        </div>
+
+        <div class="price-tabs">
+          <button type="button" class="price-tab active" data-tab="nails">Маникюр и покрытие</button>
+          <button type="button" class="price-tab" data-tab="ext">Наращивание и педикюр</button>
+          <button type="button" class="price-tab" data-tab="sugar">Шугаринг и выезд</button>
+        </div>
+
+        <div class="price-panel active" id="tab-nails">
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Аппаратный / комбинированный маникюр</h4>
+              <p>Бережная обработка кутикулы, придание формы и уходовое масло</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">4 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Аппаратный маникюр')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Маникюр + выравнивание + гель-лак</h4>
+              <p>Чистый маникюр, выравнивание базой и стойкое однотонное покрытие</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">7 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Маникюр + гель-лак')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Маникюр + укрепление гелем</h4>
+              <p>Дополнительная прочность для тонких ногтей и идеальная архитектура</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">8 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Укрепление гелем')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Снятие покрытия</h4>
+              <p>Деликатное снятие фрезой (чужая работа или без дальнейшего покрытия)</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">1 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Снятие покрытия')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Дизайн ногтей</h4>
+              <p>Френч, нежная втирка, слайдеры, блёстки или минимализм</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">от 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Маникюр с дизайном')">Выбрать</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-panel" id="tab-ext">
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Наращивание ногтей гелем</h4>
+              <p>Моделирование длины и формы + однотонное покрытие гель-лаком</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">12 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Наращивание гелем')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Наращивание ногтей акрилом</h4>
+              <p>Сверхстойкое моделирование желаемой формы и длины</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">12 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Наращивание акрилом')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Коррекция нарощенных ногтей</h4>
+              <p>Обновление архитектуры, маникюр и новое покрытие</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">9 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Коррекция ногтей')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Женский педикюр (пальчики + гель-лак)</h4>
+              <p>Аппаратная обработка пальчиков и аккуратное покрытие</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">8 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Педикюр пальчики')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Женский педикюр полный (стопа + покрытие)</h4>
+              <p>Комплексная обработка стоп, пальчиков и стойкий гель-лак</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">10 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Педикюр полный')">Выбрать</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-panel" id="tab-sugar">
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Шугаринг: глубокое бикини</h4>
+              <p>Деликатная сахарная паста премиум-класса и успокаивающий уход</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">5 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Шугаринг глубокое бикини')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Шугаринг: подмышечные впадины</h4>
+              <p>Быстрая и бережная процедура с гладкостью до 3 недель</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">2 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Шугаринг подмышки')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Шугаринг: голени или руки полностью</h4>
+              <p>Мягкое удаление волосков без раздражения и сухости кожи</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">4 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Шугаринг голени / руки')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Шугаринг: ноги полностью</h4>
+              <p>Комплексная гладкость с увлажняющим кремом после процедуры</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">6 500 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Шугаринг ноги полностью')">Выбрать</button>
+            </div>
+          </div>
+          <div class="price-row">
+            <div class="price-info">
+              <h4>Выезд мастера на дом</h4>
+              <p>Услуга выезда по Астане по предварительной договорённости</p>
+            </div>
+            <div class="price-right">
+              <span class="price-val">+ 3 000 ₸</span>
+              <button type="button" class="price-book" onclick="openBooking('Выезд на дом')">Выбрать</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="price-note">* Прайс-лист является ориентировочным — точную стоимость и свободные окошки мастер подскажет в WhatsApp.</p>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Сервис и комфорт</span>
+          <h2 class="section-title">Почему выбирают нас</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Комплексный уход</h3>
+            <p>Маникюр, наращивание гелем и акрилом, женский педикюр и шугаринг в одном месте.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏡</div>
+            <h3>Выезд на дом</h3>
+            <p>По договорённости мастер приедет к вам с полным набором стерильных инструментов.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <h3>Удобная оплата</h3>
+            <p>Принимаем оплату по QR-коду (Kaspi QR) и наличный расчёт.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">♿</div>
+            <h3>Удобный доступ</h3>
+            <p>В здании есть пандус и подъёмник, а рядом — 6 парковочных зон.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="section">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <div>
+            <span class="section-tag">Контакты и адрес</span>
+            <h2 class="section-title" style="margin-bottom:20px;">Ждём вас в студии</h2>
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="contact-dot">📍</div>
+                <div>
+                  <span>Адрес</span>
+                  <strong>г. Астана, Сарайшык район, ул. Жумекен Нажимеденов, 62 (цокольный этаж)</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-dot">🚆</div>
+                <div>
+                  <span>Ориентиры</span>
+                  <strong>Ж/д вокзал «Нурлы жол» (7 мин пешком), 6 парковок рядом</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-dot">🕒</div>
+                <div>
+                  <span>Режим работы</span>
+                  <strong>Ежедневно с 10:00 до 20:00</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-dot">📞</div>
+                <div>
+                  <span>Телефон и WhatsApp</span>
+                  <strong><a href="tel:+77074504145">+7 (707) 450-41-45</a></strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a href="https://wa.me/77074504145?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener" class="btn btn-rose">Написать в WhatsApp</a>
+            <a href="https://2gis.kz/astana/firm/70000001115813694" target="_blank" rel="noopener" class="btn btn-outline">Открыть в 2ГИС ↗</a>
+          </div>
+        </div>
+
+        <div class="brand-showcase">
+          <img src="assets/logo.png" alt="Эмблема Nail_shugaristka" class="brand-showcase-logo">
+          <h3>nail_shugaristka</h3>
+          <p>Нежный пудровый стиль, внимание к деталям и комфортная запись в удобное время.</p>
+          <a href="https://www.instagram.com/Nail_shugaristka" target="_blank" rel="noopener" class="btn btn-primary">Профиль в Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Nail_shugaristka">
+        <span>Nail_shugaristka • Астана</span>
+      </div>
+      <div>ул. Жумекен Нажимеденов, 62 • Ежедневно 10:00 – 20:00</div>
+      <div><a href="tel:+77074504145">+7 (707) 450-41-45</a></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/77074504145?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F." target="_blank" rel="noopener" class="mobile-cta">Записаться в WhatsApp</a>
+
+  <!-- Booking modal -->
+  <div class="modal-backdrop" id="bookingModal" onclick="if(event.target===this) closeBooking()">
+    <div class="modal-box">
+      <button type="button" class="modal-close" onclick="closeBooking()" aria-label="Закрыть">✕</button>
+      <h3>Быстрая запись</h3>
+      <p>Укажите имя и услугу — мы сразу откроем чат в WhatsApp с готовым сообщением.</p>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-field">
+          <label for="clientName">Ваше имя</label>
+          <input type="text" id="clientName" placeholder="Например, Алина" required>
+        </div>
+        <div class="form-field">
+          <label for="serviceSelect">Услуга</label>
+          <input type="text" id="serviceSelect" value="Маникюр + гель-лак" required>
+        </div>
+        <div class="form-field">
+          <label for="visitTime">Удобное время / дата</label>
+          <input type="text" id="visitTime" placeholder="Например, завтра после 15:00">
+        </div>
+        <button type="submit" class="btn btn-rose" style="width:100%;">Перейти в WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="modal-backdrop" id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Просмотр работы" class="lightbox-img" id="lightboxImg">
+  </div>
+
+  <script>
+    // Price tabs
+    document.querySelectorAll('.price-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.price-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    function openBooking(service) {
+      document.getElementById('serviceSelect').value = service || 'Маникюр + гель-лак';
+      document.getElementById('bookingModal').classList.add('open');
+    }
+    function closeBooking() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
+    function submitBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const service = document.getElementById('serviceSelect').value.trim();
+      const time = document.getElementById('visitTime').value.trim();
+      let msg = `Здравствуйте! Меня зовут ${name}. Хочу записаться на: ${service}.`;
+      if (time) msg += ` Удобное время: ${time}.`;
+      const url = `https://wa.me/77074504145?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener');
+      closeBooking();
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  </script>
+</body>
+</html>
